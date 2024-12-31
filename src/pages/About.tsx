@@ -5,18 +5,19 @@ const About = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+      {/* Hero Section */}
+      <div className="text-center mb-16">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
           {t('about.title')}
         </h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
           {t('about.description')}
         </p>
       </div>
 
       {/* YouTube Video Section */}
-      <div className="mb-16">
-        <div className="aspect-w-16 aspect-h-9">
+      <div className="mb-20">
+        <div className="aspect-w-16 aspect-h-9 max-w-4xl mx-auto">
           <iframe
             src="https://www.youtube.com/embed/0CgWlP6-Y4M"
             title="Eventus Netanya"
@@ -27,48 +28,56 @@ const About = () => {
         </div>
       </div>
 
-      {/* Team Section */}
-      <div className="mb-16">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-          Наша Команда
+      {/* Mission Section */}
+      <div className="mb-20">
+        <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+          {t('about.mission.title')}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <div className="flex items-center mb-4">
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">Ирена Лившиц</h3>
-                <p className="text-gray-600">Основатель проекта, Член городского совета Нетании</p>
-              </div>
-            </div>
-            <p className="text-gray-700">
-              Адвокат и общественный деятель, посвятивший себя развитию и улучшению жизни в Нетании.
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="bg-white p-8 rounded-lg shadow-lg">
+            <h3 className="text-xl font-semibold mb-4 text-primary">
+              {t('about.mission.unity.title')}
+            </h3>
+            <p className="text-gray-600 leading-relaxed">
+              {t('about.mission.unity.description')}
+            </p>
+          </div>
+          <div className="bg-white p-8 rounded-lg shadow-lg">
+            <h3 className="text-xl font-semibold mb-4 text-primary">
+              {t('about.mission.development.title')}
+            </h3>
+            <p className="text-gray-600 leading-relaxed">
+              {t('about.mission.development.description')}
+            </p>
+          </div>
+          <div className="bg-white p-8 rounded-lg shadow-lg">
+            <h3 className="text-xl font-semibold mb-4 text-primary">
+              {t('about.mission.information.title')}
+            </h3>
+            <p className="text-gray-600 leading-relaxed">
+              {t('about.mission.information.description')}
             </p>
           </div>
         </div>
       </div>
 
-      {/* Mission Section */}
+      {/* Team Section */}
       <div>
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-          Наша Миссия
+        <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+          {t('about.team.title')}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold mb-4">Объединение</h3>
-            <p className="text-gray-600">
-              Создание сильного и сплоченного сообщества жителей Нетании
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold mb-4">Развитие</h3>
-            <p className="text-gray-600">
-              Поддержка образовательных и культурных инициатив
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold mb-4">Информирование</h3>
-            <p className="text-gray-600">
-              Обеспечение жителей актуальной информацией и новостями
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-white p-8 rounded-lg shadow-lg">
+            <div className="flex flex-col items-center mb-6">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-2">
+                {t('about.team.leader.name')}
+              </h3>
+              <p className="text-primary font-medium mb-4">
+                {t('about.team.leader.position')}
+              </p>
+            </div>
+            <p className="text-gray-600 leading-relaxed text-center">
+              {t('about.team.leader.description')}
             </p>
           </div>
         </div>

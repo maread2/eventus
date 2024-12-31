@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import i18n from '../i18n/config';
 import { Link, Outlet } from 'react-router-dom';
 import { useState } from 'react';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -48,12 +49,12 @@ const Layout = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className={`min-h-screen flex flex-col ${i18n.language === 'he' ? 'rtl' : 'ltr'}`}>
       <header className="bg-white shadow-sm">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-64 flex items-center justify-between">
           <div className="flex items-center">
-            <Link to="/" className="h-64 flex items-center bg-white px-20">
-              <img src={logo} alt="Eventus Logo" className="h-full object-contain" />
+            <Link to="/" className="h-64 flex items-center bg-white px-4">
+              <img src={logo} alt="Eventus Logo" className="h-full w-auto object-contain" />
             </Link>
             <div className="hidden md:flex ml-20 space-x-16">
               <Link to="/" className="text-gray-700 hover:text-primary text-xl font-semibold">
@@ -83,8 +84,8 @@ const Layout = () => {
           <div className="flex flex-col md:flex-row justify-between items-center mb-8">
             <div className="mb-6 md:mb-0">
               <p className="text-gray-400 text-lg">
-                Netanya, Israel<br />
-                <span className="text-gray-500">4250000</span>
+                {t('footer.address')}<br />
+                <span className="text-gray-500">{t('footer.zip')}</span>
               </p>
             </div>
             <div className="flex flex-col items-center">
