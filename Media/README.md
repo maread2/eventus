@@ -1,0 +1,1 @@
+This directory contains all media related to eventus natanya.
