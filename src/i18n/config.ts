@@ -28,6 +28,34 @@ const resources = {
           description: 'Яркие культурные мероприятия, образовательные семинары и творческие встречи для всей семьи'
         }
       },
+      events: {
+        upcoming: {
+          title: 'Предстоящие События',
+          cultural: {
+            title: 'Культурный вечер',
+            location: 'Культурный центр Нетании',
+            description: 'Вечер культурного обмена с музыкой, поэзией и искусством.'
+          },
+          business: {
+            title: 'Бизнес-нетворкинг',
+            location: 'Бизнес-центр Нетании',
+            description: 'Встреча предпринимателей и профессионалов для обмена опытом и установления деловых связей.'
+          }
+        },
+        past: {
+          title: 'Прошедшие События',
+          newyear: {
+            title: 'Новогодний праздник',
+            location: 'Центральная площадь',
+            description: 'Празднование Нового года с развлекательной программой и фейерверком.'
+          },
+          seminar: {
+            title: 'Образовательный семинар',
+            location: 'Городская библиотека',
+            description: 'Серия лекций по актуальным темам от ведущих специалистов.'
+          }
+        }
+      },
       about: {
         title: 'О нашем сообществе',
         description: 'Мы создаем динамичное и открытое сообщество, объединяющее активных жителей Нетании. Наша миссия – развитие города и улучшение качества жизни каждого жителя через инновационные проекты, культурные инициативы и социальные программы.',
@@ -57,7 +85,38 @@ const resources = {
       },
       contact: {
         title: 'Свяжитесь с нами',
-        follow: 'Следите за нами'
+        follow: 'Следите за нами',
+        info: {
+          title: 'Контактная информация'
+        },
+        form: {
+          title: 'Напишите нам',
+          name: 'Имя',
+          email: 'Email',
+          message: 'Сообщение',
+          submit: 'Отправить'
+        }
+      },
+      privacy: {
+        title: 'Политика конфиденциальности',
+        date: 'Последнее обновление: 1 января 2024',
+        content: {
+          intro: 'Мы уважаем вашу конфиденциальность и стремимся защитить ваши личные данные. Эта политика объясняет, как мы собираем, используем и защищаем вашу информацию.',
+          sections: {
+            collection: {
+              title: 'Сбор данных',
+              text: 'Мы собираем только необходимую информацию для предоставления наших услуг и улучшения вашего опыта.'
+            },
+            use: {
+              title: 'Использование данных',
+              text: 'Ваши данные используются для предоставления услуг, улучшения нашего сервиса и коммуникации с вами.'
+            },
+            protection: {
+              title: 'Защита данных',
+              text: 'Мы применяем современные меры безопасности для защиты ваших данных.'
+            }
+          }
+        }
       },
       footer: {
         copyright: '© 2024 Eventus. Все права защищены.',
@@ -93,6 +152,34 @@ const resources = {
           description: 'מגוון אירועי תרבות וחינוך'
         }
       },
+      events: {
+        upcoming: {
+          title: 'אירועים קרובים',
+          cultural: {
+            title: 'ערב תרבות',
+            location: 'מרכז התרבות נתניה',
+            description: 'ערב של חילופי תרבות עם מוזיקה, שירה ואמנות.'
+          },
+          business: {
+            title: 'נטוורקינג עסקי',
+            location: 'מרכז העסקים נתניה',
+            description: 'מפגש יזמים ואנשי מקצוע לחילופי ידע ויצירת קשרים עסקיים.'
+          }
+        },
+        past: {
+          title: 'אירועים קודמים',
+          newyear: {
+            title: 'חגיגת השנה החדשה',
+            location: 'כיכר העיר',
+            description: 'חגיגת השנה החדשה עם תכנית בידור וזיקוקים.'
+          },
+          seminar: {
+            title: 'סמינר חינוכי',
+            location: 'ספריית העיר',
+            description: 'סדרת הרצאות בנושאים אקטואליים ממומחים מובילים.'
+          }
+        }
+      },
       about: {
         title: 'אודות הקהילה שלנו',
         description: 'אנו יוצרים קהילה דינמית ופתוחה המאחדת את תושבי נתניה הפעילים. המשימה שלנו היא לפתח את העיר ולשפר את איכות החיים של כל תושב דרך פרויקטים חדשניים, יוזמות תרבות ותוכניות חברתיות.',
@@ -122,7 +209,38 @@ const resources = {
       },
       contact: {
         title: 'צור קשר',
-        follow: 'עקבו אחרינו'
+        follow: 'עקבו אחרינו',
+        info: {
+          title: 'פרטי התקשרות'
+        },
+        form: {
+          title: 'כתבו לנו',
+          name: 'שם',
+          email: 'דוא"ל',
+          message: 'הודעה',
+          submit: 'שלח'
+        }
+      },
+      privacy: {
+        title: 'מדיניות פרטיות',
+        date: 'עדכון אחרון: 1 בינואר 2024',
+        content: {
+          intro: 'אנו מכבדים את פרטיותך ומחויבים להגן על המידע האישי שלך. מדיניות זו מסבירה כיצד אנו אוספים, משתמשים ומגנים על המידע שלך.',
+          sections: {
+            collection: {
+              title: 'איסוף מידע',
+              text: 'אנו אוספים רק את המידע הנחוץ לצורך מתן השירותים שלנו ושיפור החוויה שלך.'
+            },
+            use: {
+              title: 'שימוש במידע',
+              text: 'המידע שלך משמש למתן שירותים, שיפור השירות שלנו ותקשורת איתך.'
+            },
+            protection: {
+              title: 'הגנת מידע',
+              text: 'אנו מיישמים אמצעי אבטחה מתקדמים להגנה על המידע שלך.'
+            }
+          }
+        }
       },
       footer: {
         copyright: '© 2024 Eventus. כל הזכויות שמורות.',
@@ -158,6 +276,34 @@ const resources = {
           description: 'Diverse cultural and educational events for the whole family'
         }
       },
+      events: {
+        upcoming: {
+          title: 'Upcoming Events',
+          cultural: {
+            title: 'Cultural Evening',
+            location: 'Netanya Cultural Center',
+            description: 'An evening of cultural exchange featuring music, poetry, and art.'
+          },
+          business: {
+            title: 'Business Networking',
+            location: 'Netanya Business Center',
+            description: 'A gathering of entrepreneurs and professionals for knowledge exchange and business connections.'
+          }
+        },
+        past: {
+          title: 'Past Events',
+          newyear: {
+            title: 'New Year Celebration',
+            location: 'City Square',
+            description: 'New Year celebration with entertainment program and fireworks.'
+          },
+          seminar: {
+            title: 'Educational Seminar',
+            location: 'City Library',
+            description: 'A series of lectures on current topics by leading experts.'
+          }
+        }
+      },
       about: {
         title: 'About Our Community',
         description: 'We are building a dynamic and inclusive community that unites active residents of Netanya. Our mission is to develop the city and enhance the quality of life for every resident through innovative projects, cultural initiatives, and social programs.',
@@ -187,7 +333,38 @@ const resources = {
       },
       contact: {
         title: 'Contact Us',
-        follow: 'Follow Us'
+        follow: 'Follow Us',
+        info: {
+          title: 'Contact Information'
+        },
+        form: {
+          title: 'Write to Us',
+          name: 'Name',
+          email: 'Email',
+          message: 'Message',
+          submit: 'Send'
+        }
+      },
+      privacy: {
+        title: 'Privacy Policy',
+        date: 'Last updated: January 1, 2024',
+        content: {
+          intro: 'We respect your privacy and are committed to protecting your personal information. This policy explains how we collect, use, and protect your information.',
+          sections: {
+            collection: {
+              title: 'Data Collection',
+              text: 'We only collect information necessary to provide our services and improve your experience.'
+            },
+            use: {
+              title: 'Data Use',
+              text: 'Your data is used to provide services, improve our service, and communicate with you.'
+            },
+            protection: {
+              title: 'Data Protection',
+              text: 'We implement advanced security measures to protect your data.'
+            }
+          }
+        }
       },
       footer: {
         copyright: '© 2024 Eventus. All rights reserved.',

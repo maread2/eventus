@@ -49,48 +49,59 @@ const Layout = () => {
   ];
 
   return (
-    <div className={`min-h-screen flex flex-col ${i18n.language === 'he' ? 'rtl' : 'ltr'}`}>
+    <div className="min-h-screen flex flex-col">
       <header className="bg-white shadow-sm">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-64 flex items-center justify-between">
-          <div className="flex items-center">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-64 flex items-center justify-between relative">
+          {/* Logo container with fixed position */}
+          <div className="absolute left-8">
             <Link to="/" className="h-64 flex items-center bg-white px-4">
               <img src={logo} alt="Eventus Logo" className="h-full w-auto object-contain" />
             </Link>
-            <div className="hidden md:flex ml-20 space-x-16">
-              <Link to="/" className="text-gray-700 hover:text-primary text-xl font-semibold">
+          </div>
+          
+          {/* Navigation links centered */}
+          <div className="flex-1 flex justify-center">
+            <div className="hidden md:flex gap-16">
+              <Link to="/" className="text-gray-700 hover:text-primary text-xl font-semibold" style={{ direction: i18n.language === 'he' ? 'rtl' : 'ltr' }}>
                 {t('nav.home')}
               </Link>
-              <Link to="/about" className="text-gray-700 hover:text-primary text-xl font-semibold">
+              <Link to="/about" className="text-gray-700 hover:text-primary text-xl font-semibold" style={{ direction: i18n.language === 'he' ? 'rtl' : 'ltr' }}>
                 {t('nav.about')}
               </Link>
-              <Link to="/events" className="text-gray-700 hover:text-primary text-xl font-semibold">
+              <Link to="/events" className="text-gray-700 hover:text-primary text-xl font-semibold" style={{ direction: i18n.language === 'he' ? 'rtl' : 'ltr' }}>
                 {t('nav.events')}
               </Link>
-              <Link to="/contact" className="text-gray-700 hover:text-primary text-xl font-semibold">
+              <Link to="/contact" className="text-gray-700 hover:text-primary text-xl font-semibold" style={{ direction: i18n.language === 'he' ? 'rtl' : 'ltr' }}>
                 {t('nav.contact')}
               </Link>
             </div>
           </div>
-          <LanguageSwitcher />
+
+          {/* Language switcher with fixed position */}
+          <div className="absolute right-8">
+            <LanguageSwitcher />
+          </div>
         </nav>
       </header>
 
       <main className="flex-grow">
-        <Outlet />
+        <div style={{ direction: i18n.language === 'he' ? 'rtl' : 'ltr' }}>
+          <Outlet />
+        </div>
       </main>
 
       <footer className="bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="flex flex-col md:flex-row justify-between items-center mb-8">
             <div className="mb-6 md:mb-0">
-              <p className="text-gray-400 text-lg">
+              <p className="text-gray-400 text-lg" style={{ direction: i18n.language === 'he' ? 'rtl' : 'ltr' }}>
                 {t('footer.address')}<br />
                 <span className="text-gray-500">{t('footer.zip')}</span>
               </p>
             </div>
             <div className="flex flex-col items-center">
-              <h3 className="text-lg font-semibold mb-4">{t('contact.follow')}</h3>
-              <div className="flex space-x-4">
+              <h3 className="text-lg font-semibold mb-4" style={{ direction: i18n.language === 'he' ? 'rtl' : 'ltr' }}>{t('contact.follow')}</h3>
+              <div className="flex gap-4">
                 {socialLinks.map((link) => (
                   <a
                     key={link.name}
@@ -111,7 +122,7 @@ const Layout = () => {
             <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
               <div className="bg-white text-gray-900 rounded-lg w-11/12 max-w-4xl max-h-[90vh] flex flex-col">
                 <div className="bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-start">
-                  <h2 className="text-2xl font-bold">{t('privacy.title')}</h2>
+                  <h2 className="text-2xl font-bold" style={{ direction: i18n.language === 'he' ? 'rtl' : 'ltr' }}>{t('privacy.title')}</h2>
                   <button
                     onClick={() => setIsPrivacyOpen(false)}
                     className="text-gray-500 hover:text-gray-700"
@@ -122,114 +133,26 @@ const Layout = () => {
                   </button>
                 </div>
                 <div className="overflow-y-auto bg-gray-50">
-                  <div className="px-8 py-6 space-y-8 prose max-w-none">
+                  <div className="px-8 py-6 space-y-8" style={{ direction: i18n.language === 'he' ? 'rtl' : 'ltr' }}>
                     <p className="text-lg mb-6">{t('privacy.date')}</p>
-                    <p className="mb-8">{t('privacy.content.intro')}</p>
+                    <p className="mb-8 text-gray-700">{t('privacy.content.intro')}</p>
                     
                     {/* Data Collection */}
                     <div className="mb-8">
-                      <h3 className="text-xl font-semibold mb-4">1. Сбор данных</h3>
-                      <p className="mb-4">Мы можем собирать следующие типы информации:</p>
-                      
-                      <div className="ml-4 mb-4">
-                        <h4 className="font-semibold mb-2">a. Личная информация:</h4>
-                        <ul className="list-disc ml-6">
-                          <li className="mb-2">Имя, адрес электронной почты, номер телефона и другие контактные данные, предоставленные при регистрации или обращении к нам.</li>
-                          <li className="mb-2">Платежная информация для транзакций.</li>
-                        </ul>
-                      </div>
-                      
-                      <div className="ml-4">
-                        <h4 className="font-semibold mb-2">b. Неличная информация:</h4>
-                        <ul className="list-disc ml-6">
-                          <li className="mb-2">Тип браузера, IP-адрес, тип устройства и поведение при просмотре на нашем сайте.</li>
-                          <li className="mb-2">Файлы cookie и другие технологии отслеживания (см. Раздел 6).</li>
-                        </ul>
-                      </div>
+                      <h3 className="text-xl font-semibold mb-4">{t('privacy.content.sections.collection.title')}</h3>
+                      <p className="text-gray-700">{t('privacy.content.sections.collection.text')}</p>
                     </div>
 
                     {/* Data Use */}
                     <div className="mb-8">
-                      <h3 className="text-xl font-semibold mb-4">2. Использование собранных данных</h3>
-                      <p className="mb-4">Мы используем собранные данные для следующих целей:</p>
-                      <ul className="list-disc ml-6">
-                        <li className="mb-2">Предоставление и улучшение наших услуг.</li>
-                        <li className="mb-2">Обработка платежей и управление транзакциями.</li>
-                        <li className="mb-2">Общение с вами об обновлениях, акциях или обслуживании клиентов.</li>
-                        <li className="mb-2">Обеспечение безопасности веб-сайта и обнаружение мошенничества или несанкционированного доступа.</li>
-                        <li className="mb-2">Соблюдение юридических обязательств.</li>
-                      </ul>
+                      <h3 className="text-xl font-semibold mb-4">{t('privacy.content.sections.use.title')}</h3>
+                      <p className="text-gray-700">{t('privacy.content.sections.use.text')}</p>
                     </div>
 
-                    {/* Data Sharing */}
+                    {/* Data Protection */}
                     <div className="mb-8">
-                      <h3 className="text-xl font-semibold mb-4">3. Передача данных</h3>
-                      <p className="mb-4">Мы не продаем ваши личные данные. Мы можем делиться вашими данными с:</p>
-                      <ul className="list-disc ml-6">
-                        <li className="mb-2">Поставщиками услуг и партнерами, которые помогают в работе нашего сайта и услуг.</li>
-                        <li className="mb-2">Правоохранительными или регулирующими органами, когда этого требует закон.</li>
-                        <li className="mb-2">В случаях передачи бизнеса, таких как слияние или поглощение.</li>
-                      </ul>
-                    </div>
-
-                    {/* Rights */}
-                    <div className="mb-8">
-                      <h3 className="text-xl font-semibold mb-4">4. Ваши права</h3>
-                      <p className="mb-4">В соответствии с израильским Законом о защите конфиденциальности и применимыми нормами, у вас есть следующие права:</p>
-                      <ul className="list-disc ml-6 mb-4">
-                        <li className="mb-2">Доступ: Запросить копию личных данных, которые мы храним о вас.</li>
-                        <li className="mb-2">Исправление: Запросить исправление неточных или неполных данных.</li>
-                        <li className="mb-2">Удаление: Запросить удаление ваших личных данных, где это юридически допустимо.</li>
-                        <li className="mb-2">Возражение: Возражать против определенных типов обработки данных.</li>
-                      </ul>
-                      <p className="italic">Для реализации этих прав, пожалуйста, свяжитесь с нами по адресу info@eventus.co.il</p>
-                    </div>
-
-                    {/* Security */}
-                    <div className="mb-8">
-                      <h3 className="text-xl font-semibold mb-4">5. Безопасность данных</h3>
-                      <p>Мы применяем соответствующие технические и организационные меры для защиты ваших личных данных. Хотя мы стремимся обеспечить безопасность вашей информации, ни один метод передачи через Интернет не является на 100% безопасным.</p>
-                    </div>
-
-                    {/* Cookies */}
-                    <div className="mb-8">
-                      <h3 className="text-xl font-semibold mb-4">6. Файлы cookie и технологии отслеживания</h3>
-                      <p>Мы используем файлы cookie для улучшения вашего опыта и сбора аналитики. Вы можете управлять настройками cookie через настройки вашего браузера. Для получения дополнительной информации см. нашу Политику использования файлов cookie.</p>
-                    </div>
-
-                    {/* Data Retention */}
-                    <div className="mb-8">
-                      <h3 className="text-xl font-semibold mb-4">7. Хранение данных</h3>
-                      <p>Мы храним ваши личные данные столько времени, сколько необходимо для целей, указанных в этой политике, если более длительный период хранения не требуется по закону.</p>
-                    </div>
-
-                    {/* International Transfers */}
-                    <div className="mb-8">
-                      <h3 className="text-xl font-semibold mb-4">8. Международная передача данных</h3>
-                      <p>Если ваши данные передаются за пределы Израиля, мы обеспечиваем соответствующие меры защиты, такие как договорные положения или соблюдение международных стандартов, таких как GDPR.</p>
-                    </div>
-
-                    {/* Third Party Links */}
-                    <div className="mb-8">
-                      <h3 className="text-xl font-semibold mb-4">9. Ссылки на сторонние сайты</h3>
-                      <p>Наш сайт может содержать ссылки на сторонние веб-сайты. Мы не несем ответственности за их политику конфиденциальности. Пожалуйста, ознакомьтесь с их политикой перед предоставлением ваших данных.</p>
-                    </div>
-
-                    {/* Changes */}
-                    <div className="mb-8">
-                      <h3 className="text-xl font-semibold mb-4">10. Изменения в этой политике</h3>
-                      <p>Мы можем периодически обновлять эту политику конфиденциальности. Изменения будут публиковаться на этой странице с обновленной датой вступления в силу.</p>
-                    </div>
-
-                    {/* Contact */}
-                    <div className="mb-8">
-                      <h3 className="text-xl font-semibold mb-4">11. Свяжитесь с нами</h3>
-                      <p className="mb-4">Если у вас есть вопросы или замечания по поводу этой политики конфиденциальности или ваших данных, пожалуйста, свяжитесь с нами:</p>
-                      <ul className="list-none ml-6">
-                        <li className="mb-2">Email: info@eventus.co.il</li>
-                        <li className="mb-2">Телефон: +972 XX XXX XXXX</li>
-                        <li className="mb-2">Адрес: Нетания, Израиль</li>
-                      </ul>
+                      <h3 className="text-xl font-semibold mb-4">{t('privacy.content.sections.protection.title')}</h3>
+                      <p className="text-gray-700">{t('privacy.content.sections.protection.text')}</p>
                     </div>
                   </div>
                 </div>
@@ -240,12 +163,13 @@ const Layout = () => {
           {/* Footer Bottom */}
           <div className="border-t border-gray-800 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center">
-              <p className="text-gray-400 text-sm">
+              <p className="text-gray-400 text-sm" style={{ direction: i18n.language === 'he' ? 'rtl' : 'ltr' }}>
                 {t('footer.copyright')}
               </p>
               <button
                 onClick={() => setIsPrivacyOpen(true)}
                 className="text-gray-400 hover:text-white text-sm mt-4 md:mt-0"
+                style={{ direction: i18n.language === 'he' ? 'rtl' : 'ltr' }}
               >
                 {t('privacy.title')}
               </button>

@@ -5,38 +5,34 @@ const Events = () => {
 
   const upcomingEvents = [
     {
-      title: 'Культурный вечер',
+      title: t('events.upcoming.cultural.title'),
       date: '2024-01-15',
       time: '19:00',
-      location: 'Культурный центр Нетании',
-      description:
-        'Вечер культурного обмена с музыкой, поэзией и искусством.',
+      location: t('events.upcoming.cultural.location'),
+      description: t('events.upcoming.cultural.description'),
     },
     {
-      title: 'Бизнес-нетворкинг',
+      title: t('events.upcoming.business.title'),
       date: '2024-01-20',
       time: '18:30',
-      location: 'Бизнес-центр Нетании',
-      description:
-        'Встреча предпринимателей и профессионалов для обмена опытом и установления деловых связей.',
+      location: t('events.upcoming.business.location'),
+      description: t('events.upcoming.business.description'),
     },
   ];
 
   const pastEvents = [
     {
-      title: 'Новогодний праздник',
+      title: t('events.past.newyear.title'),
       date: '2023-12-31',
-      location: 'Центральная площадь',
-      description:
-        'Празднование Нового года с развлекательной программой и фейерверком.',
+      location: t('events.past.newyear.location'),
+      description: t('events.past.newyear.description'),
       imageUrl: 'https://via.placeholder.com/400x300',
     },
     {
-      title: 'Образовательный семинар',
+      title: t('events.past.seminar.title'),
       date: '2023-12-15',
-      location: 'Городская библиотека',
-      description:
-        'Серия лекций по актуальным темам от ведущих специалистов.',
+      location: t('events.past.seminar.location'),
+      description: t('events.past.seminar.description'),
       imageUrl: 'https://via.placeholder.com/400x300',
     },
   ];
@@ -46,7 +42,7 @@ const Events = () => {
       {/* Upcoming Events */}
       <section className="mb-16">
         <h2 className="text-3xl font-bold text-gray-900 mb-8">
-          Предстоящие События
+          {t('events.upcoming.title')}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {upcomingEvents.map((event, index) => (
@@ -58,7 +54,7 @@ const Events = () => {
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="text-xl font-semibold">{event.title}</h3>
                   <div className="text-primary font-semibold">
-                    {new Date(event.date).toLocaleDateString('ru-RU')}
+                    {new Date(event.date).toLocaleDateString()}
                     <div className="text-sm text-gray-600">{event.time}</div>
                   </div>
                 </div>
@@ -94,7 +90,7 @@ const Events = () => {
       {/* Past Events */}
       <section>
         <h2 className="text-3xl font-bold text-gray-900 mb-8">
-          Прошедшие События
+          {t('events.past.title')}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {pastEvents.map((event, index) => (
@@ -111,7 +107,7 @@ const Events = () => {
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="text-xl font-semibold">{event.title}</h3>
                   <div className="text-gray-600">
-                    {new Date(event.date).toLocaleDateString('ru-RU')}
+                    {new Date(event.date).toLocaleDateString()}
                   </div>
                 </div>
                 <p className="text-gray-600 mb-4">{event.description}</p>

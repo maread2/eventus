@@ -6,7 +6,7 @@ const Contact = () => {
   const contactInfo = {
     email: 'info@eventus.netanya.il',
     phone: '+972 123 456 789',
-    address: 'Нетания, Израиль',
+    address: t('footer.address'),
   };
 
   return (
@@ -20,7 +20,7 @@ const Contact = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Contact Information */}
         <div className="bg-white rounded-lg shadow-lg p-8">
-          <h2 className="text-2xl font-bold mb-6">Контактная информация</h2>
+          <h2 className="text-2xl font-bold mb-6">{t('contact.info.title')}</h2>
           <div className="space-y-4">
             <div className="flex items-center">
               <svg
@@ -127,11 +127,11 @@ const Contact = () => {
 
         {/* Contact Form */}
         <div className="bg-white rounded-lg shadow-lg p-8">
-          <h2 className="text-2xl font-bold mb-6">Напишите нам</h2>
+          <h2 className="text-2xl font-bold mb-6">{t('contact.form.title')}</h2>
           <form className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-gray-700 mb-2">
-                Имя
+                {t('contact.form.name')}
               </label>
               <input
                 type="text"
@@ -141,7 +141,7 @@ const Contact = () => {
             </div>
             <div>
               <label htmlFor="email" className="block text-gray-700 mb-2">
-                Email
+                {t('contact.form.email')}
               </label>
               <input
                 type="email"
@@ -151,7 +151,7 @@ const Contact = () => {
             </div>
             <div>
               <label htmlFor="message" className="block text-gray-700 mb-2">
-                Сообщение
+                {t('contact.form.message')}
               </label>
               <textarea
                 id="message"
@@ -163,7 +163,7 @@ const Contact = () => {
               type="submit"
               className="w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors"
             >
-              Отправить
+              {t('contact.form.submit')}
             </button>
           </form>
         </div>
